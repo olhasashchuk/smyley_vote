@@ -1,0 +1,28 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+h1, h2 {
+    text-align: center;
+}
+button {
+    margin: 20px;
+}
+ul {
+    list-style: none;
+}
+.smiley__list {
+    display: flex;
+    gap: 10px;
+}
+
+.smiley__item {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.result_wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
