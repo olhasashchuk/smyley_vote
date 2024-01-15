@@ -21,6 +21,12 @@ class App extends Component {
             winner: [],
         }
     }
+    componentDidMount() {
+        const currentWinner = localStorage.getItem('winner');
+        this.setState({
+            winner: currentWinner === null ? [] : JSON.parse(currentWinner),
+        })
+    }
 
     setVote = (smileyId) => {
         this.setState((prevState) => {
@@ -56,6 +62,9 @@ class App extends Component {
     resetVote = () => {
         localStorage.removeItem('winner');
         this.setState({ winner: [] });
+        this.setState((prevState) => {
+            prevState.smileys.map((smiley) => smiley.vote=0) });
+
     };
 
     render() {
