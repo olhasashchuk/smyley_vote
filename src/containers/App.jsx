@@ -61,9 +61,10 @@ class App extends Component {
 
     resetVote = () => {
         localStorage.removeItem('winner');
-        this.setState({ winner: [] });
-        this.setState((prevState) => {
-            prevState.smileys.map((smiley) => smiley.vote=0) });
+        this.setState((prevState) => ({
+            winner: [],
+            smileys: prevState.smileys.map(smiley => ({...smiley, vote: 0}))
+        }));
 
     };
 
